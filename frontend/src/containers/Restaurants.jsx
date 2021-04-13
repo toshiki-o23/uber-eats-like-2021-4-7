@@ -1,13 +1,13 @@
 import React, { Fragment, useReducer, useEffect } from 'react';
 import styled from 'styled-components';
-// ---  ---
+//   
 import { Link } from "react-router-dom";
-// ---  ---
+//   
 
-// ---  ---
+//   
 // components
 import Skeleton from '@material-ui/lab/Skeleton';
-// ---  ---
+//   
 
 // apis
 import { fetchRestaurants } from '../apis/restaurants';
@@ -19,17 +19,17 @@ import {
   restaurantsReducer,
 } from '../reducers/restaurants';
 
-// ---  ---
+//   
 // constants
 import { REQUEST_STATE } from '../constants';
-// ---  ---
+//   
 
 // images
 import MainLogo from '../images/logo.png';
 import MainCoverImage from '../images/main-cover-image.png';
-// ---  ---
+//   
 import RestaurantImage from '../images/restaurant-image.jpg';
-// ---  ---
+//   
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -49,7 +49,7 @@ const MainCover = styled.img`
   height: 600px;
 `;
 
-// ---  ---
+//   
 const RestaurantsContentsList = styled.div`
   display: flex;
   justify-content: space-around;
@@ -75,7 +75,7 @@ const SubText = styled.p`
   color: black;
   font-size: 12px;
 `;
-// ---  ---
+//   
 
 export const Restaurants = () => {
   const [state, dispatch] = useReducer(restaurantsReducer, initialState);
@@ -101,7 +101,7 @@ export const Restaurants = () => {
       <MainCoverImageWrapper>
         <MainCover src={MainCoverImage} alt="main cover" />
       </MainCoverImageWrapper>
-      // ---  ---
+   
       <RestaurantsContentsList>
         {
           state.fetchState === REQUEST_STATE.LOADING ?
@@ -122,7 +122,7 @@ export const Restaurants = () => {
             )
         }
       </RestaurantsContentsList>
-      // ---  ---
+      
     </Fragment>
   )
 }
